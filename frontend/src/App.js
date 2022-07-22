@@ -11,8 +11,10 @@ function App() {
   axios.get(url)
     .then(response => {
       console.log(response)
-    })
+    });
+    
 
+  return <p> hi</p>
 }
 
 export default App;
