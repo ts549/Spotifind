@@ -3,14 +3,14 @@ import wave
 
 class Recorder:
 
-    def __init__(self, chunk, format, channels, rate):
+    def __init__(self, chunk, channels, rate):
         self.CHUNK = chunk
-        self.FORMAT = format
+        self.FORMAT = pyaudio.paInt16
         self.CHANNELS = channels
         self.RATE = rate
         self.recorder = pyaudio.PyAudio()
 
-    def record(self, seconds):
+    def record(self, time):
         stream = self.recorder.open(
             format = self.FORMAT,
             channels = self.CHANNELS,
@@ -22,7 +22,7 @@ class Recorder:
         print("start recording...")
 
         frames = []
-        for i in range(0, int(self.RATE / self.CHUNK * seconds)):
+        for i in range(0, int(self.RATE / self.CHUNK * time)):
             data = stream.read(self.CHUNK)
             frames.append(data)
 
