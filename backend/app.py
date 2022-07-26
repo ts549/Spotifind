@@ -18,7 +18,11 @@ def start_record():
     data = request.get_json()
     print(data['time'])
     interface.record(time=int(data['time']))
-    return {'response': '200'}
+    text = interface.convert('output.wav')
+    
+    if (text is not None):
+        return {'response' : '200',
+                'translation' : text}
 
 if __name__ == "__main__":
     app.run(debug=True)
