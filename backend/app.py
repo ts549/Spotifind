@@ -13,6 +13,22 @@ def test():
 def index():
     return send_from_directory('../frontend/src','index.html')
 
+@app.route("/icons/spotify-logo.png", methods = ["GET"])
+def spotify_logo():
+    return send_from_directory('../frontend/icons', 'spotify-logo.png')
+
+@app.route("/icons/menu.png", methods = ["GET"])
+def menu():
+    return send_from_directory('../frontend/icons', 'menu.png')
+
+@app.route("/icons/audio.gif", methods = ["GET"])
+def audio_gif():
+    return send_from_directory('../frontend/icons', 'audio.gif')
+
+@app.route("/icons/play.png", methods= ["GET"])
+def play():
+    return send_from_directory('../frontend/icons', 'play.png')
+
 @app.route("/api/start_record", methods = ["POST"])
 def start_record():
     data = request.get_json()
