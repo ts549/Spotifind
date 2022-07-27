@@ -1,3 +1,33 @@
+#audio-gif {
+  padding-top: 150px;
+  padding-left: 2%;
+  padding-right: 1%;
+  width: 85%;
+  height: 80px;
+}
+
+#spotify-logo {
+  padding-left: 2%;
+  width: 50px;
+  height: 50px;
+}
+
+#menu {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.h1 {
+  font-family: "Papyrus";
+  font-weight: bold;
+  padding-left: 35%;
+  padding-top: 2%;
+  padding-right: 42%;
+  display: inline-block;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
