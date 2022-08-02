@@ -1,7 +1,8 @@
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
-import PlayButton from './PlayButton';
+import PlayButton from './components/PlayButton';
+import Title from './components/Title';
+import Searchbar from './components/Searchbar';
 
 function App() {
 
@@ -15,9 +16,11 @@ function App() {
     });
     
   return <div class="header">
+    <Title/>
+    <Searchbar/>
     <div class="header">
       <img id="spotify-logo" src="../icons/spotify-logo.png" alt="Error IMG"></img>
-      <h1 class="h1">Spotifind</h1>
+      <h1 class="h1">SPOTIFIND</h1>
       <img id="menu" src="../icons/menu.png" alt="Error IMG"></img>
     </div>
 
