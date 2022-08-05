@@ -1,6 +1,7 @@
 import chunk
 from voice_recorder import Recorder
 from speech_converter import Recognizer
+from nlp.nltkAnalysis import NltkAnalyzer
 
 class Interface:
 
@@ -12,3 +13,13 @@ class Interface:
         recognizer = Recognizer()
         text = recognizer.convert(audio_file)
         return text
+
+    def emotion_analysis(self, text):
+        analyzer = NltkAnalyzer()
+        emotions = analyzer.emotion_analysis(text)
+        return emotions
+    
+    def sentiment_analysis(self, text):
+        analyzer = NltkAnalyzer()
+        sentiment = analyzer.sentiment_analysis(text)
+        return sentiment

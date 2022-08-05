@@ -1,10 +1,13 @@
 from flask import Flask, request, jsonify, send_from_directory
 from interface import Interface
 
+#Starts Flask connection
 app = Flask(__name__)
 
 interface = Interface()
 
+#Routing paths ---
+#Sets up a proxy for all frontend requests from port 3000 to port 5000
 @app.route("/test", methods = ["GET"])
 def test():
     return {'test' : 'string'}
@@ -37,8 +40,11 @@ def start_record():
     text = interface.convert('output.wav')
     
     if (text is not None):
+        emotion = interface.emotion_analysis(text)
+        sentiment = interface.sentiment_analysis(text)
         return {'response' : '200',
-                'translation' : text}
+                'emotion' : emotion,
+                'sentiment' : sentiment}
 
 if __name__ == "__main__":
     app.run(debug=True)
