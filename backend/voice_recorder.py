@@ -17,7 +17,7 @@ class Recorder:
             channels = self.CHANNELS,
             rate = self.RATE,
             input = True,
-            input_device_index=1,
+            input_device_index=0,
             frames_per_buffer = self.CHUNK
         )
 
