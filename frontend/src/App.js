@@ -1,6 +1,7 @@
 import './App.css';
 import Vinyl from './components/vinyl';
-import Square from './components/square'
+import Square from './components/square';
+import Background from './components/background';
 
 function App() {
   <head>
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <div>
+      <Background />
       <div class="relative w-screen h-screen flex items-center justify-center">
         <div class="relative ">
           <div class="pb-2"> 
@@ -19,6 +21,8 @@ function App() {
           </div>
         </div>
       </div>
+
+     
     </div>
 
     
