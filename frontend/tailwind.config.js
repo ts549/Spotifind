@@ -12,7 +12,12 @@ module.exports = {
       colors: {
         'purpledge': '#6462c6',
       },
+      padding: {
+        '1/2': '50%',
+        full: '100%',
+      }
     }
+
   },
   plugins: [],
 }
