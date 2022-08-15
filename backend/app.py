@@ -1,18 +1,14 @@
 from flask import Flask, request, jsonify, send_from_directory
 from interface import Interface
+from flask_cors import CORS
 
 # Starts Flask connection
 app = Flask(__name__)
-
+CORS(app)
 interface = Interface()
 
 # Routing paths ---
 # Sets up a proxy for all frontend requests from port 3000 to port 5000
-
-
-@app.route("/test", methods=["GET"])
-def test():
-    return {'test': 'string'}
 
 
 @app.route("/", defaults={'path': ''})
@@ -40,6 +36,12 @@ def play():
     return send_from_directory('../frontend/icons', 'play.png')
 
 
+@app.route("/test", methods=["GET"])
+def test():
+    print("IN TEST ROUTE")
+    return {'test': 'tao likes kids'}
+
+
 @app.route("/api/start_record", methods=["POST"])
 def start_record():
     data = request.get_json()
@@ -51,12 +53,16 @@ def start_record():
         emotion = interface.emotion_analysis(text)
         sentiment = interface.sentiment_analysis(text)
         mood = sentiment['compound']
+        print("MOOD DISOCVERD: ")
         print(mood)
         playlist = interface.generate_playlist(mood)
+        top3 = interface.get_top3_songs(mood)
         return {'response': '200',
+                'text': text,
                 'emotion': emotion,
                 'sentiment': sentiment,
-                'playlist generated': playlist}
+                'playlist generated': playlist,
+                'top 3 songs': top3}
 
 
 if __name__ == "__main__":

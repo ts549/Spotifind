@@ -28,5 +28,13 @@ class Interface:
 
     def generate_playlist(self, mood):
         spotifyAPI = SpotifyAPI()
+        print ("LINE 31")
+        print(mood)
         playlist = spotifyAPI.generatePlaylists(mood)
         return playlist
+
+    def get_top3_songs(self, mood):
+        spotifyAPI = SpotifyAPI()
+        top3 = spotifyAPI.get_top3_songs(mood)
+        return top3
+
