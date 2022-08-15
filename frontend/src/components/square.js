@@ -1,16 +1,12 @@
 import React from 'react'
 
-const square = () => {
+const Square = () => {
   return (
-    <div>
-        <div class = "bg-red-300"> 
-        <div class="flex justify-center items-center">
-            <div class="w-[400px] h-[400px]"> </div> 
-        </div>
-        </div>
-    </div>
+  <div>
+    <div class="bg-red-300 w-[400px] h-[400px]"> </div> 
+  </div>
 
   )
 }
 
-export default square
+export default Square
