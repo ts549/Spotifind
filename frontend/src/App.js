@@ -1,6 +1,7 @@
 import './App.css';
 import Vinyl from './components/vinyl';
 import Square from './components/square'
+import Microphone from './components/microphone';
 
 function App() {
   <head>
@@ -8,20 +9,21 @@ function App() {
   </head>
 
   return (
+    // <div>
+    //   <div class="relative w-screen h-screen flex items-center justify-center">
+    //     <div class="relative ">
+    //       <div class="pb-2"> 
+    //         <Vinyl/>
+    //       </div>
+    //       <div class="absolute right-44 bottom-0"> 
+    //         <Square/>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
     <div>
-      <div class="relative w-screen h-screen flex items-center justify-center">
-        <div class="relative ">
-          <div class="pb-2"> 
-            <Vinyl/>
-          </div>
-          <div class="absolute right-44 bottom-0"> 
-            <Square/>
-          </div>
-        </div>
-      </div>
+      <Microphone/>
     </div>
-
-    
   
   );
 }
