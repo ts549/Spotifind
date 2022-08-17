@@ -10,7 +10,13 @@ module.exports = {
         Lato: ['Lato']
       },
       colors: {
-        'purpledge': '#6462c6',
+        'light_red': '#EE484D',
+        'salmon': '#FF7F7F',
+        'mulberry': '#601A3E',
+        'plum': '#4C0212',
+        'black': '#000000',
+        'light_purple': '#EBE8FC',
+        'white': '#FFFFFF'
       },
       padding: {
         '1/2': '50%',
