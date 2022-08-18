@@ -52,13 +52,14 @@ def start_record():
     if (text is not None):
         emotion = interface.emotion_analysis(text)
         sentiment = interface.sentiment_analysis(text)
-        mood = sentiment['compound']
-        print("MOOD DISOCVERD: ")
+        mood = round(sentiment['compound'],2)
+        print("MOOD: ")
         print(mood)
         playlist = interface.generate_playlist(mood)
         top3 = interface.get_top3_songs(mood)
         return {'response': '200',
                 'text': text,
+                'mood': mood,
                 'emotion': emotion,
                 'sentiment': sentiment,
                 'playlist generated': playlist,

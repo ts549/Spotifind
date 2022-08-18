@@ -3,10 +3,8 @@ import axios from "axios";
 
 const Vinyl = () => {
   const [top3Songs, setTop3Songs] = useState([]);
-  const [currentSong, setCurrentSong] = useState("") 
-  const [previousSong, setPreviousSong] = useState("") 
-  const [nextSong, setNextSong] = useState("") 
-  
+  const [text, setText] = useState("");
+  const [mood, setMood] = useState("");
 
   const onClick = () => {
     console.log("IN onClick ");
@@ -24,7 +22,8 @@ const Vinyl = () => {
     .then(function(res) {
       console.log("in front end")
       setTop3Songs(res['data']['top 3 songs'])
-    
+      setText(res['data']['text'])
+      setMood(res['data']['mood'])
     })
     .catch(function(error) {
         console.log(error);
@@ -53,6 +52,11 @@ const Vinyl = () => {
           </div>
         </div>
       </div> 
+
+      
+      <h1 class="z-30">{mood ? mood : "mood"}</h1>
+      <h1 class="z-30">{text ? text : "text"}</h1>
+
 
       <button onClick={() => onClick()} class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> record</button>
     

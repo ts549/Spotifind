@@ -53,7 +53,9 @@ class SpotifyAPI:
 
         # print(playlist)
         print(sp.current_user()['id'])
-        playlist_id = sp.user_playlist_create(sp.current_user()['id'], name="The Mood Colon: " + str(mood), public=True, description="sopweepwee")['id']
+        # playlist_id = sp.user_playlist_create(sp.current_user()['id'], name="Mood: " + str(mood), public=True, description="sopweepwee")['id']
+        playlist_id = sp.user_playlist_create(sp.current_user()['id'], name="Mood: " + str(round(mood, 2)), public=True, description="sopweepwee")['id']
+
 
         print(playlist_id)
         sp.playlist_add_items(playlist_id, uris, position=None)
