@@ -53,7 +53,7 @@ def start_record():
         emotion = interface.emotion_analysis(text)
         sentiment = interface.sentiment_analysis(text)
         mood = sentiment['compound']
-        print("MOOD DISOCVERD: ")
+        print("MOOD DISCOVERED: ")
         print(mood)
         playlist = interface.generate_playlist(mood)
         top3 = interface.get_top3_songs(mood)

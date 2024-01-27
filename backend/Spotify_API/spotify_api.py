@@ -7,8 +7,8 @@ from spotipy.oauth2 import SpotifyOAuth
 
 class SpotifyAPI:
     def authorize(self):
-        SPOTIPY_CLIENT_ID='e89e725228ac43bfba56a3a785b8930f'
-        SPOTIPY_CLIENT_SECRET='73763bff46934dafb4075cd9f4bc021f'
+        SPOTIPY_CLIENT_ID='37b1ec59796f4d068a9cc098be57bc75'
+        SPOTIPY_CLIENT_SECRET='8834c64cabea4fe6af7bd03aa1af22c5'
         SPOTIPY_REDIRECT_URI='https://www.google.com/'
         SCOPE="user-library-read user-top-read playlist-modify-public"
         sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET, redirect_uri=SPOTIPY_REDIRECT_URI, scope=SCOPE))
@@ -17,7 +17,6 @@ class SpotifyAPI:
     def generatePlaylists(self, mood):
         mood = (mood + 1) / 2
         sp = self.authorize()
-        print ("FUCK YOU")
         top_songs = sp.current_user_top_tracks(limit=50, time_range='medium_term')['items']
         playlist = []
         uris = []
@@ -53,7 +52,7 @@ class SpotifyAPI:
 
         # print(playlist)
         print(sp.current_user()['id'])
-        playlist_id = sp.user_playlist_create(sp.current_user()['id'], name="The Mood Colon: " + str(mood), public=True, description="sopweepwee")['id']
+        playlist_id = sp.user_playlist_create(sp.current_user()['id'], name="The Mood Colon: " + str(mood), public=True, description="")['id']
 
         print(playlist_id)
         sp.playlist_add_items(playlist_id, uris, position=None)

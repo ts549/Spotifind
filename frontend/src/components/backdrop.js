@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './backdrop.css';
 
 function Backdrop() {
 
@@ -11,16 +12,16 @@ function Backdrop() {
   }
 
   return (
-    <div className={"bg-light_red relative duration-1000 " + (changed ? "w-96 h-96 right-12 my-[9%]" : "w-screen h-screen")}>
-        <div className={"text-white text-left pl-[3%] pt-[2%] text-3xl absolute z-10 duration-1000" + (changed ? "text-3xl" : "text-xl")}> 
+    <div className={"absolute bg-light_red base " + (changed ? "shrunk" : "fullscreen")}>
+        <div className={"text-white text-left pl-[3%] pt-[2%] text-3xl absolute z-10 duration-1000 font-medium " + (changed ? "text-xl" : "text-3xl")}> 
             mood
         </div>
 
-        <div class="justify-center items-center flex absolute z-0 inset-0">
+        <div class="justify-center items-center flex absolute z-0 inset-0 duration-1000">
             <button className={"text-white duration-1000 " + (changed ? "text-xl" : "text-2xl")} onClick={clicked}>Click Me</button>
         </div>
       </div>
   )
 }
 
-export default Backdrop
+export default Backdrop;

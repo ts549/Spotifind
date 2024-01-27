@@ -1,0 +1,15 @@
+.base {
+    transition: width 700ms, height 700ms, margin-left 700ms;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.shrunk {
+    width: 57vh;
+    height: 60vh;
+    margin-left: 32%;
+    margin-top: 7%;
+}
