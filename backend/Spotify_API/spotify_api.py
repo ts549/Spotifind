@@ -52,12 +52,11 @@ class SpotifyAPI:
 
         # print(playlist)
         print(sp.current_user()['id'])
-        playlist_id = sp.user_playlist_create(sp.current_user()['id'], name="The Mood Colon: " + str(mood), public=True, description="")['id']
+        playlist_id = sp.user_playlist_create(sp.current_user()['id'], name="The Mood Colon: " + str(round(mood, 2)), public=True, description="")['id']
 
         print(playlist_id)
         sp.playlist_add_items(playlist_id, uris, position=None)
 
-  
         return playlist_id
 
     def get_top3_songs(self, mood): 
@@ -70,11 +69,10 @@ class SpotifyAPI:
         print("top 3 songs:")
         print(top3)
         return top3
-        
 
 
 # 1) get current playing song in spotify api
 # 2) add to interface
 # 3) add route to app.py
-# 4) get info from backend url to frontend 
+# 4) get info from backend url to frontend
 # 5) display current playing song in correct format

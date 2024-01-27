@@ -4,10 +4,8 @@ import './vinyl.css';
 
 const Vinyl = () => {
   const [top3Songs, setTop3Songs] = useState([]);
-  const [currentSong, setCurrentSong] = useState("") 
-  const [previousSong, setPreviousSong] = useState("") 
-  const [nextSong, setNextSong] = useState("") 
-  
+  const [text, setText] = useState("");
+  const [mood, setMood] = useState("");
 
   const onClick = () => {
     console.log("IN onClick ");
@@ -25,7 +23,8 @@ const Vinyl = () => {
     .then(function(res) {
       console.log("in front end")
       setTop3Songs(res['data']['top 3 songs'])
-    
+      setText(res['data']['text'])
+      setMood(res['data']['mood'])
     })
     .catch(function(error) {
         console.log(error);
@@ -47,21 +46,16 @@ const Vinyl = () => {
           {top3Songs[2] ? (top3Songs[2].length > 9 ? top3Songs[2].substring(0, 9) + "..." : top3Songs[2]) : ""}
         </p>
         <div className="absolute inset-0 flex justify-center items-center">
-          <div className="bg-white small_circle rounded-full relative"> 
+          <div className="bg-white small_circle rounded-full relative">
             <div className="absolute inset-0 flex justify-center items-center">
-              <div className="bg-black dot rounded-full relative"/>  
+              <div className="bg-black dot rounded-full relative"/>
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 
       <button onClick={() => onClick()} className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> record</button>
-    
     </div>
-    
-
-
-
   )
 }
 
