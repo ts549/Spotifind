@@ -7,8 +7,8 @@ from spotipy.oauth2 import SpotifyOAuth
 
 class SpotifyAPI:
     def authorize(self):
-        SPOTIPY_CLIENT_ID='37b1ec59796f4d068a9cc098be57bc75'
-        SPOTIPY_CLIENT_SECRET='8834c64cabea4fe6af7bd03aa1af22c5'
+        SPOTIPY_CLIENT_ID=''
+        SPOTIPY_CLIENT_SECRET=''
         SPOTIPY_REDIRECT_URI='https://www.google.com/'
         SCOPE="user-library-read user-top-read playlist-modify-public"
         sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET, redirect_uri=SPOTIPY_REDIRECT_URI, scope=SCOPE))
